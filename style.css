@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.divPai {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.titulo {
+    width: 70%;
+    z-index: 2;
+    position: absolute;
+    bottom: 40%;
+    text-align: center;
+    text-justify: center;
+    color: rgb(173, 173, 173);
+    font-size: 6vw;
+    mix-blend-mode: color-dodge;
+}
+
+.sobreposicao {
+    z-index: 1;
+    position: absolute;
+    background: linear-gradient(180deg, #0D0D37 0%, rgba(13, 13, 55, 0.00) 68%, #0D0D37 100%);
+    height: 100%;
+    width: 100%;
+}
+
+.divGradient {
+    overflow: hidden;
+    background-color: #11114d;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.gradient {
+    background: conic-gradient(from 90deg at 50% 50%, #000000 0deg, #777777 100deg, #eeeeee 360deg);
+    mix-blend-mode: color-dodge;
+    height: 130vh;
+    width: 50%;
+}
+
+.gradDireita {
+    transform: rotateY(180deg);
+}
+
+.divCards{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 200px;
+    position: absolute;
+    bottom: 50%;
+}
+
+.card{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #383838;
+    mix-blend-mode: color-dodge;
+}
+
+.divObrigado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(244, 248, 255);
+    h1{
+        font-size: 15vw;
+    }
+}
