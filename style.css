@@ -1,3 +1,9 @@
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -7,11 +13,11 @@
 .divPai {
     display: flex;
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
-
+    background-color: #0a0a2e;
 }
 
 .titulo {
@@ -21,7 +27,7 @@
     bottom: 40%;
     text-align: center;
     text-justify: center;
-    color: rgb(173, 173, 173);
+    color: rgb(216, 219, 224);
     font-size: 6vw;
     mix-blend-mode: color-dodge;
 }
@@ -36,26 +42,44 @@
 
 .divGradient {
     overflow: hidden;
-    background-color: #11114d;
-    width: 100%;
+    background-color: #0a0a2e;
+    width: 100vw;
     height: 100%;
     display: flex;
+    position: absolute;
 }
 
+.divGradient2 {
+    opacity: 0;
+    overflow: hidden;
+    background-color: #0a0a2e;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+
+
 .gradient {
-    background: conic-gradient(from 90deg at 50% 50%, #000000 0deg, #777777 100deg, #eeeeee 360deg);
+    background: conic-gradient(from 90deg at 50% 50%, #f1f1f1 0deg, black 6deg, #777777 100deg, #f4f4f4 360deg);
     mix-blend-mode: color-dodge;
     height: 130vh;
-    width: 50%;
+    flex: 1;
 }
 
 .gradDireita {
     transform: rotateY(180deg);
 }
 
-.divCards{
+.gradient2 {
+    background: conic-gradient(from 90deg at 50% 50%, #ececec 0deg, black 6deg, #777777 340deg, #f4f4f4 360deg);
+    mix-blend-mode: color-dodge;
+}
+
+.divCards {
     position: relative;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: auto;
@@ -64,7 +88,7 @@
     bottom: 50%;
 }
 
-.card{
+.card {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -72,8 +96,8 @@
     mix-blend-mode: color-dodge;
 }
 
-.divObrigado{
-    display: flex;
+.divObrigado {
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 3;
@@ -81,7 +105,8 @@
     height: 100%;
     position: absolute;
     background-color: rgb(244, 248, 255);
-    h1{
+
+    h1 {
         font-size: 15vw;
     }
 }
