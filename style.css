@@ -7,6 +7,14 @@
 }
 
 @font-face {
+    font-family: 'clashL';
+    src: url('assets/fonts/clash-display-font-1768824553-0/ClashDisplay-Light.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'clashR';
     src: url('assets/fonts/clash-display-font-1768824553-0/ClashDisplay-Regular.woff2') format('woff2');
     font-style: normal;
@@ -26,10 +34,44 @@ body {
     box-sizing: border-box;
 }
 
-h1,h2,h3, p{
-    font-family: 'clash', sans-serif;
+h1,
+h2,
+h3,
+p {
+    font-family: 'clashR', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    color: #232327;
+    font-size: 96px;
+}
+
+p {
+    color: #47474D;
+    font-size: 36px;
+}
+
+.divPai h2 {
+    width: 70%;
+    z-index: 2;
+    position: absolute;
+    bottom: 27%;
+    text-align: center;
+    text-justify: center;
+    color: rgb(192, 192, 192);
+    font-size: 5vw;
+    mix-blend-mode: color-dodge;
+}
+
+.card h3 {
+    text-align: center;
+    text-justify: center;
+    color: rgb(192, 192, 192);
+    font-size: 4vw;
+    mix-blend-mode: color-dodge;
+}
 
 .divPai {
     display: flex;
@@ -41,29 +83,27 @@ h1,h2,h3, p{
     background-color: #0D0D37;
 }
 
-.titulo {
-    width: 70%;
+.logoImg {
+    width: 30vw;
     z-index: 2;
     position: absolute;
-    bottom: 40%;
-    text-align: center;
-    text-justify: center;
-    color: rgb(216, 219, 224);
-    font-size: 6vw;
+    left: 50%;
+    top: 40px;
+    transform: translate(-50%, 0);
     mix-blend-mode: color-dodge;
 }
 
 .sobreposicao {
     z-index: 1;
     position: absolute;
-    background: linear-gradient(180deg, #0D0D37 0%, rgba(13, 13, 55, 0.00) 68%);
+    background: linear-gradient(180deg, #0d0d373f 0%, rgba(255, 255, 255, 0) 85%);
     height: 100%;
     width: 100%;
 }
 
 .divGradient {
     overflow: hidden;
-    background-color: #0a0a2e;
+    background-color: #090929;
     width: 100vw;
     height: 100%;
     display: flex;
@@ -73,19 +113,17 @@ h1,h2,h3, p{
 .divGradient2 {
     opacity: 0;
     overflow: hidden;
-    background-color: #0a0a2e;
+    background-color: #090929;
     width: 100vw;
     height: 100%;
     display: flex;
     position: absolute;
 }
 
-
-
 .gradient {
-    background: conic-gradient(from 90deg at 50% 50%, #f1f1f1 0deg, rgb(24, 24, 24) 5deg, #777777 110deg, #f4f4f4 360deg);
+    background: conic-gradient(from 90deg at 50% 50%, #f1f1f1 0deg, rgb(24, 24, 24) 12deg, #777777 70deg, #f4f4f4 360deg);
     mix-blend-mode: color-dodge;
-    height: 185vh;
+    height: 170vh;
     flex: 1;
 }
 
@@ -104,21 +142,45 @@ h1,h2,h3, p{
     align-items: center;
     justify-content: center;
     width: auto;
-    height: 200px;
+    height: auto;
     position: absolute;
-    bottom: 50%;
+    height: 96%;
+    bottom: 0;
 }
 
 .card {
+    gap: 10%;
+    height: 50%;
+    width: 90vw;
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     mix-blend-mode: color-dodge;
 }
 
+.card img {
+    width: 20%;
+}
+
+.cardFase2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cardFase2 h3 {
+    font-size: 6vw;
+}
+
+.cardFinal h3{
+    font-size: 5vw;
+}
+
 .divObrigado {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
@@ -130,4 +192,8 @@ h1,h2,h3, p{
     h1 {
         font-size: 15vw;
     }
+}
+
+.content {
+    display: none;
 }
