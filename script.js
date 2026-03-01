@@ -1,14 +1,21 @@
-if ('scrollRestoration' in history) {
+/*if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
 window.addEventListener('load', () => {
     ScrollTrigger.refresh(true);
     setTimeout(() => window.scrollTo(0, 0), 50);
-});
+});*/
 
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const quadrados = gsap.utils.toArray('.quadrado');
+    const maxQuadrados = 7;
+    const quadradosAtivos = new Set()
+    const rand = (min, max) => Math.random() * (max - min) + min;
+
+    
 
     const cards = gsap.utils.toArray(".card");
     const cardsFase1 = cards.slice(0, cards.length - 2); // primeiros
