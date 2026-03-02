@@ -10,21 +10,52 @@ window.addEventListener('load', () => {
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const quadrados = gsap.utils.toArray('.quadrado');
-    const maxQuadrados = 7;
-    const quadradosAtivos = new Set()
-    const rand = (min, max) => Math.random() * (max - min) + min;
+    const quadrados = gsap.utils.toArray('.quadrado')
+    const maxQuadrados = 7
+    const ativos = new Set()
 
-    
+    const cadence = 0.35;
+    const fadeIn = 1;
+    const hold = 2;
+    const fadeOut = 0.8;
+
+    gsap.set(quadrados, {
+        opacity: 0
+    })
+
+    function acenderUm() {
+        if (ativos.size >= maxQuadrados) return;
+
+        const livres = quadrados.filter(q => !ativos.has(q))
+        if (!livres.length) return
+
+        const q = livres[Math.floor(Math.random() * livres.length)]
+        ativos.add(q)
+
+        gsap.to(q, {
+            opacity: 1,
+            duration: fadeIn,
+            ease: 'none',
+            onComplete: () => {
+                gsap.delayedCall(hold, () => {
+                    gsap.to(q, {
+                        opacity: 0,
+                        duration: fadeOut,
+                        ease: 'none',
+                        onComplete: () => ativos.delete(q)
+                    })
+                })
+            }
+        })
+    }
+
+    gsap.timeline({ repeat: -1 }).call(acenderUm).to({}, { duration: cadence })
 
     const cards = gsap.utils.toArray(".card");
     const cardsFase1 = cards.slice(0, cards.length - 2); // primeiros
     const cardsFase2 = cards.slice(-2); // últimos 3
-
-    const fadeIn = 1;
-    const hold = 1;
-    const fadeOut = 0.8;
     const cardBlock = fadeIn + hold + fadeOut;
+
 
     const tl = gsap.timeline({
         scrollTrigger: {

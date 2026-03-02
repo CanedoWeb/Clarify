@@ -90,11 +90,11 @@ a img {
 
 .quadrado {
     position: absolute;
-    width: 220px;
-    height: 220px;
-    border-radius: 29px;
+    width: 200px;
+    height: 200px;
+    border-radius: 26px;
     background: linear-gradient(180deg, rgba(239, 237, 255, 0.01) 0%, rgba(230, 227, 254, 0.01) 100%);
-    box-shadow: -4px 10px 41.6px 4px rgba(207, 202, 255, 0.65);
+    box-shadow: -4px 10px 30px 4px rgba(207, 202, 255, 0.722);
     z-index: 1;
     pointer-events: none;
 }
