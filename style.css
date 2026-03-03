@@ -76,7 +76,7 @@ a {
     border: 2px solid transparent;
     background:
         linear-gradient(#E6E3FE) padding-box,
-        linear-gradient(90deg, #8888cf05, #8888CF) border-box;
+        linear-gradient(-90deg, #8888cf00 5%, #8888CF) border-box;
     color: #1a1a1a;
 
     text-decoration: none;
@@ -187,6 +187,7 @@ a img {
     justify-content: center;
     align-items: center;
     background-color: #0D0D37;
+    isolation: isolate;
 }
 
 .logoImg {
@@ -293,19 +294,13 @@ a img {
     background-color: #E6E3FE;
     padding-top: .5vh;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .divObrigado header,
 .divObrigado .hero {
     position: relative;
     z-index: 2;
-}
-
-.content {
-    background-color: #E6E3FE;
-
-    display: flex;
-    height: 100vh;
 }
 
 header {
@@ -322,15 +317,15 @@ header>img {
     height: auto;
 }
 
-header a {
+a.btnHeader {
     font-size: 24px;
     border-radius: 60px;
     border: 3px solid rgba(136, 136, 207, 0.57);
     background: #F0EEFF;
+}
 
-    img {
-        width: 22px;
-    }
+a.btnHeader img {
+    width: 22px;
 }
 
 
@@ -347,11 +342,11 @@ header a {
 .hero h1 {
     line-height: 127.071%;
     letter-spacing: 5%;
+}
 
-    span {
-        font-family: 'clash';
-        font-weight: 400;
-    }
+.hero h1 span {
+    font-family: 'clash';
+    font-weight: 400;
 }
 
 .hero p {
@@ -359,3 +354,513 @@ header a {
     letter-spacing: 5%;
     margin: 44px 0 48px 0;
 }
+
+
+/*CONTENT*/
+
+main.content {
+    position: relative;
+    width: 100%;
+    background-color: #E6E3FE;
+    height: auto;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+main.content> :not(.quadradoMain) {
+    position: relative;
+    z-index: 2;
+}
+
+.quadradoMain {
+    z-index: 1;
+}
+
+section {
+    margin: 200px 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h2 {
+    width: 100%;
+    text-align: start;
+}
+
+.divTela {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.divTela img {
+    width: 80%;
+    mix-blend-mode: color-dodge;
+}
+
+.divTela .funcoes {
+    margin-top: 35px;
+    display: flex;
+    gap: 80px;
+}
+
+.divTela .funcoes span {
+    font-size: 22px;
+    color: #47474D70;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divTela .funcoes span img {
+    width: 28px;
+    opacity: 70%;
+}
+
+.content p.txtSobre {
+    font-size: 4vw;
+    line-height: 163%;
+    text-justify: center;
+    text-align: justify;
+    margin: 200px 68px 200px 68px;
+}
+
+.sectionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divCardsCrescimento {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+    gap: 10vw;
+    margin-top: 140px;
+    margin-bottom: 130px;
+    place-items: center;
+}
+
+span.cardCirculo {
+    justify-self: center;
+    align-self: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: -50px;
+    z-index: 99;
+    width: 160px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 131px;
+    border: 2px solid rgba(221, 221, 255, 0.57);
+    background: #E6E3FE;
+    box-shadow: 0 0 10px 8px rgba(173, 173, 251, 0.25) inset;
+}
+
+.cardCrescimento {
+    position: relative;
+    width: 80%;
+    height: fit-content;
+}
+
+.cardCrescimento .background {
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    background:
+        linear-gradient(-90deg, rgba(230, 227, 254, 1) 0%, rgba(230, 227, 254, 0.7) 10%) padding-box,
+        linear-gradient(-90deg, #8888CF00, #8888CF) border-box;
+}
+
+
+.background h4 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.background p {
+    font-size: 22px;
+}
+
+.processo {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.processo .sectionContent {
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+
+/* PIN SECTION */
+.pin-section {
+    margin: 100px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin-section .content {
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(40px, 6vw, 96px);
+}
+
+.pin-section .list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: "clash", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    color: #47474D;
+}
+
+.pin-section .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(#47474D 50%, #8888CF);
+}
+
+.pin-section .right {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pin-section .slide {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.pin-section .slide>img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.pin-section .txt-slide {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pin-section .slide h4 {
+    margin: 0;
+    font-size: 60px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.pin-section .slide p {
+    margin: 30px 0;
+    font-size: 24px;
+    color: #47474D;
+    font-size: 22px;
+    text-align: left;
+}
+
+.logoImgFooter {
+    width: min(30vw, 420px);
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    transform: translate(-50%, 0);
+    mix-blend-mode: color-dodge;
+}
+
+.sobreposicaoFooter {
+    z-index: 2;
+    position: absolute;
+    background: linear-gradient(180deg, #0d0d373f 0%, rgba(255, 255, 255, 0) 85%);
+    inset: 0;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+footer {
+    width: 100%;
+    height: 100vh;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #0D0D37;
+}
+
+footer .footer h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 1200px);
+    text-align: center;
+    z-index: 3;
+    color: rgb(192, 192, 192);
+    mix-blend-mode: color-dodge;
+    font-size: clamp(36px, 5vw, 96px);
+}
+
+.footerInfosLeft,
+.footerInfosRight {
+    position: absolute;
+    top: 5%;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footerInfosLeft {
+    left: clamp(20px, 4vw, 56px);
+    align-items: flex-start;
+}
+
+.footerInfosRight {
+    right: clamp(20px, 4vw, 56px);
+    align-items: flex-end;
+}
+
+.footerInfosLeft p,
+.footerInfosRight p {
+    margin: 0;
+    color: #9ea0bf;
+    font-size: clamp(16px, 1.2vw, 26px);
+    line-height: 1.35;
+}
+
+.footerInfosRight p {
+    text-align: right;
+}
+
+.footer .divGradient2 {
+    animation: animaGrad 3s ease-in-out infinite alternate;
+}
+
+footer .gradient {
+    height: 140vh;
+}
+
+footer h3 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0;
+    line-height: 0.65;
+    text-align: center;
+    z-index: 3;
+    color: rgb(192, 192, 192);
+    mix-blend-mode: color-dodge;
+    font-size: 180px;
+    letter-spacing: 125px;
+    font-weight: 500;
+    mix-blend-mode: overlay;
+}
+
+@keyframes animaGrad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.clientes .sectionContent {
+    width: 100%;
+    align-items: flex-start;
+}
+
+.cardsClientes {
+    margin-top: 140px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 80px;
+}
+
+.cardClientes {
+    position: relative;
+    width: 100%;
+    min-height: 85%;
+}
+
+.cardClientes .background {
+    gap: 10px;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    background:
+        linear-gradient(-90deg, rgba(230, 227, 254, 1) 0%, rgba(230, 227, 254, 0.70) 10%) padding-box,
+        linear-gradient(-90deg, #8888CF00, #8888CF) border-box;
+}
+
+.cardClientes:nth-child(1) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.cardClientes:nth-child(2) {
+    grid-column: span 4;
+    grid-row: span 1;
+
+}
+
+.cardClientes:nth-child(3) {
+    grid-column: span 5;
+    grid-row: span 1;
+
+}
+
+.cardClientes:nth-child(4) {
+    grid-column: span 5;
+    grid-row: span 1;
+
+}
+
+.cardClientes:nth-child(5) {
+    grid-column: span 7;
+    grid-row: span 1;
+
+}
+
+.cardClientes h4 {
+    font-size: 26px;
+}
+
+.cardClientes p {
+    font-size: 20px;
+}
+
+h5 {
+    font-weight: 500;
+}
+
+.cardClientes .cardCirculo {
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: auto;
+}
+
+.cardClientes .cardCirculo img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+}
+
+.empresas {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empresas h3 {
+    margin-bottom: 100px;
+    font-size: 48px;
+}
+
+.empresas img {
+    width: 100%;
+}
+
+.chamada .sectionContent {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.chamada .sectionContent h3 {
+    width: 70%;
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+.chamada .sectionContent h3 > span.estrategicas {
+    font-weight: 400;
+}
+
+.chamada .sectionContent p {
+    width: 80%;
+    margin-bottom: 120px;
+}
+
+.textoCarrossel {
+    width: max-content;
+    display: flex;
+    color: #47474D;
+}
+
+.textoCarrossel p {
+    font-size: 128px;
+    font-weight: 500;
+    mix-blend-mode: overlay;
+    animation: textoCarrossel 20s infinite linear;
+}
+
+@keyframes textoCarrossel {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
