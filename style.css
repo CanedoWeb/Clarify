@@ -60,7 +60,7 @@ p {
     font-size: 32px;
 }
 
-a {
+a:not(footer a) {
     font-family: 'clash', sans-serif;
     font-weight: 500;
     height: fit-content;
@@ -82,8 +82,17 @@ a {
     text-decoration: none;
     font-size: 28px;
     font-weight: 500;
+    transition: .3s ;
 }
 
+a:hover{
+    scale: 1.05;
+}
+footer a {
+    text-decoration: none;
+    color: #9D9FBE;
+    mix-blend-mode: color-dodge;
+}
 a img {
     width: 24px;
 }
