@@ -55,8 +55,9 @@
     }
 
     .divObrigado {
-        height: 101dvh;
+        height: 100%;
         margin: 0 5px;
+        margin-bottom: -1px;
     }
 
     .hero h1 {

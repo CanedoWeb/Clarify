@@ -302,12 +302,13 @@ a img {
 .divObrigado {
     z-index: 3;
     width: 100%;
-    height: 101%;
+    height: 100%;
     position: absolute;
     background-color: #E6E3FE;
     padding-top: .5vh;
     overflow: hidden;
     isolation: isolate;
+    margin-bottom: -1px;
 }
 
 .divObrigado header,
@@ -883,7 +884,7 @@ h5 {
 }
 
 .textoCarrossel p {
-        opacity: 0.3;
+    opacity: 0.3;
     font-size: 128px;
     font-weight: 500;
     mix-blend-mode: overlay;
