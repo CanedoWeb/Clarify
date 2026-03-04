@@ -38,7 +38,7 @@ body {
     font-weight: 400;
     margin: 0;
     overflow-x  : hidden;
-    height: 100%; overscroll-behavior: none;
+    height: 100%; 
 }
 
 * {
