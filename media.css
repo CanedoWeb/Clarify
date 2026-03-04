@@ -103,6 +103,7 @@
 
     .content {
         padding: 0 5px;
+        border: red solid 2px;
     }
 
     .divTela>img {
