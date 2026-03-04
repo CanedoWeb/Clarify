@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .gradient {
-        height: 150dvh;
+        height: 150%;
         width: 50vw;
         border: none;
         padding: 0;

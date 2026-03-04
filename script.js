@@ -9,6 +9,9 @@ window.addEventListener('load', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({
+    ignoreMobileResize: true
+});
 
     const mainContent = document.querySelector("main.content");
     const totalQuadradosMain = 90;
