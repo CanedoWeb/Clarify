@@ -128,6 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const gradientBackDuration = isMobileHero ? 4.5 : 3;
     const gradientPeakHold = isMobileHero ? 3 : 1.5;
     const fase1Duration = cardsFase1.length * cardBlock;
+    const fase2StartOffset = fase1Duration;
+    const gradientBackStartOffset = Math.max(gradientFadeDuration, fase1Duration) + gradientPeakHold;
 
 
     const tl = gsap.timeline({
@@ -181,19 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    tl.addLabel('volta', `inicio+=${Math.max(gradientFadeDuration, fase1Duration) + gradientPeakHold}`);
+    tl.addLabel('voltaCards', `inicio+=${fase2StartOffset}`);
+    tl.addLabel('voltaGradient', `inicio+=${gradientBackStartOffset}`);
 
     tl.to(qHero('.divGradient'), {
         opacity: 1,
         duration: gradientBackDuration,
         ease: "none"
-    }, "volta");
+    }, "voltaGradient");
 
     tl.to(qHero('.divGradient2'), {
         opacity: 0,
         duration: gradientBackDuration,
         ease: "none"
-    }, "volta");
+    }, "voltaGradient");
 
     cardsFase2.forEach((card, index) => {
         const start = index * cardBlock;
@@ -203,21 +206,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }, {
             opacity: 1,
             duration: fadeIn
-        }, `volta+=${start}`);
+        }, `voltaCards+=${start}`);
 
         tl.to(card, {
             duration: hold
-        }, `volta+=${start + fadeIn}`);
+        }, `voltaCards+=${start + fadeIn}`);
 
         if (!card.classList.contains('cardFinal')) {
             tl.to(card, {
                 opacity: 0,
                 duration: fadeOut
-            }, `volta+=${start + fadeIn + hold}`);
+            }, `voltaCards+=${start + fadeIn + hold}`);
         } else {
             tl.to(card, {
                 opacity: 1,
-            }, `volta+=${start + fadeIn + hold}`);
+            }, `voltaCards+=${start + fadeIn + hold}`);
         }
     });
 
