@@ -37,8 +37,7 @@ body {
     font-family: 'clash', sans-serif;
     font-weight: 400;
     margin: 0;
-    overflow-x  : hidden;
-    height: fit-content;
+    overflow-x: hidden;
 }
 
 * {
