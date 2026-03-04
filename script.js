@@ -118,13 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
         .call(() => acenderUm(quadradosObrigado, ativosObrigado, maxQuadradosObrigado))
         .to({}, { duration: cadence })
 
-    const cards = gsap.utils.toArray(".card");
+    const qHero = gsap.utils.selector(".divPai");
+    const cards = qHero(".card");
     const cardsFase1 = cards.slice(0, cards.length - 2); // primeiros
     const cardsFase2 = cards.slice(-2); // últimos 3
     const cardBlock = fadeIn + hold + fadeOut;
     const isMobileHero = window.matchMedia("(max-width: 768px)").matches;
     const gradientFadeDuration = isMobileHero ? 24 : 15;
     const gradientBackDuration = isMobileHero ? 4.5 : 3;
+    const gradientPeakHold = isMobileHero ? 3 : 1.5;
+    const fase1Duration = cardsFase1.length * cardBlock;
 
 
     const tl = gsap.timeline({
@@ -139,13 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.addLabel("inicio", 0);
 
-    tl.to('.divGradient', {
+    tl.to(qHero('.divGradient'), {
         opacity: 0,
         duration: gradientFadeDuration,
         ease: "none"
     }, "inicio");
 
-    tl.to('.divGradient2', {
+    tl.to(qHero('.divGradient2'), {
         opacity: 1,
         duration: gradientFadeDuration,
         ease: "none"
@@ -178,15 +181,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    tl.addLabel('volta', '>');
+    tl.addLabel('volta', `inicio+=${Math.max(gradientFadeDuration, fase1Duration) + gradientPeakHold}`);
 
-    tl.to('.divGradient', {
+    tl.to(qHero('.divGradient'), {
         opacity: 1,
         duration: gradientBackDuration,
         ease: "none"
     }, "volta");
 
-    tl.to('.divGradient2', {
+    tl.to(qHero('.divGradient2'), {
         opacity: 0,
         duration: gradientBackDuration,
         ease: "none"
@@ -434,3 +437,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
