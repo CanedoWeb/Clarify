@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .gradient {
-        height: 150svh;
+        height: 150dvh;
         width: 50vw;
         border: none;
         padding: 0;
@@ -12,8 +12,8 @@
     }
 
     .divPai {
-        height: 100svh;
-        min-height: 100svh;
+        height: 100dvh;
+        min-height: 100dvh;
     }
 
     .divGradient,
@@ -21,7 +21,7 @@
         overflow: hidden;
         inset: 0;
         width: 100vw;
-        height: 100svh;
+        height: 100dvh;
     }
 
     .divPai h2 {
