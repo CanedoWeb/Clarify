@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: '.divPai',
             start: 'top top',
-            end: "+=" + cards.length * 60 + "%",
+            end: "+=" + cards.length * 50 + "%",
             scrub: 1.5,
             pin: true
         }
