@@ -50,7 +50,7 @@ h1,
 h2,
 h3 {
     color: #232327;
-    font-size: 5vw;
+    font-size: 80px;
     font-family: 'clash', sans-serif;
     font-weight: 500;
 }
@@ -71,7 +71,6 @@ a:not(footer a) {
 
     padding: 16px 22px;
 
-
     border-radius: 999px;
     border: 2px solid transparent;
     background:
@@ -82,17 +81,19 @@ a:not(footer a) {
     text-decoration: none;
     font-size: 28px;
     font-weight: 500;
-    transition: .3s ;
+    transition: .3s;
 }
 
-a:hover{
+a:hover {
     scale: 1.05;
 }
+
 footer a {
     text-decoration: none;
     color: #9D9FBE;
     mix-blend-mode: color-dodge;
 }
+
 a img {
     width: 24px;
 }
@@ -176,7 +177,7 @@ a img {
     text-align: center;
     text-justify: center;
     color: rgb(192, 192, 192);
-    font-size: 5vw;
+    font-size: 80px;
     mix-blend-mode: color-dodge;
 }
 
@@ -184,8 +185,12 @@ a img {
     text-align: center;
     text-justify: center;
     color: rgb(192, 192, 192);
-    font-size: 4vw;
+    font-size: 74px;
     mix-blend-mode: color-dodge;
+}
+
+.card img {
+    width: 300px;
 }
 
 .divPai {
@@ -224,6 +229,7 @@ a img {
     height: 100%;
     display: flex;
     position: absolute;
+    gap: -1;
 }
 
 .divGradient2 {
@@ -234,6 +240,7 @@ a img {
     height: 100%;
     display: flex;
     position: absolute;
+    gap: -1;
 }
 
 .gradient {
@@ -276,9 +283,6 @@ a img {
     mix-blend-mode: color-dodge;
 }
 
-.card img {
-    width: 20%;
-}
 
 .cardFase2 {
     display: flex;
@@ -288,11 +292,11 @@ a img {
 }
 
 .cardFase2 h3 {
-    font-size: 6vw;
+    font-size: 80px;
 }
 
 .cardFinal h3 {
-    font-size: 5vw;
+    font-size: 80px;
 }
 
 .divObrigado {
@@ -432,7 +436,7 @@ section h2 {
 }
 
 .content p.txtSobre {
-    font-size: 4vw;
+    font-size: 62px;
     line-height: 163%;
     text-justify: center;
     text-align: justify;
@@ -716,6 +720,19 @@ footer h3 {
     mix-blend-mode: overlay;
 }
 
+.footerCredit {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 4;
+    color: #9ea0bf;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
 @keyframes animaGrad {
     from {
         opacity: 0;
@@ -845,13 +862,18 @@ h5 {
     margin-bottom: 52px;
 }
 
-.chamada .sectionContent h3 > span.estrategicas {
+.chamada .sectionContent h3>span.estrategicas {
     font-weight: 400;
 }
 
 .chamada .sectionContent p {
     width: 80%;
     margin-bottom: 120px;
+}
+
+.botoesChamada {
+    display: flex;
+    gap: 30px;
 }
 
 .textoCarrossel {
@@ -861,6 +883,7 @@ h5 {
 }
 
 .textoCarrossel p {
+        opacity: 0.3;
     font-size: 128px;
     font-weight: 500;
     mix-blend-mode: overlay;
@@ -872,4 +895,3 @@ h5 {
         transform: translateX(-100%);
     }
 }
-

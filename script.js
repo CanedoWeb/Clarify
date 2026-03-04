@@ -116,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardsFase1 = cards.slice(0, cards.length - 2); // primeiros
     const cardsFase2 = cards.slice(-2); // últimos 3
     const cardBlock = fadeIn + hold + fadeOut;
+    const isMobileHero = window.matchMedia("(max-width: 768px)").matches;
+    const gradientFadeDuration = isMobileHero ? 24 : 15;
+    const gradientBackDuration = isMobileHero ? 4.5 : 3;
 
 
     const tl = gsap.timeline({
@@ -132,13 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.to('.divGradient', {
         opacity: 0,
-        duration: 15,
+        duration: gradientFadeDuration,
         ease: "none"
     }, "inicio");
 
     tl.to('.divGradient2', {
         opacity: 1,
-        duration: 15,
+        duration: gradientFadeDuration,
         ease: "none"
     }, "inicio");
 
@@ -173,13 +176,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.to('.divGradient', {
         opacity: 1,
-        duration: 3,
+        duration: gradientBackDuration,
         ease: "none"
     }, "volta");
 
     tl.to('.divGradient2', {
         opacity: 0,
-        duration: 3,
+        duration: gradientBackDuration,
         ease: "none"
     }, "volta");
 
@@ -322,15 +325,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             textNodes.forEach((node) => {
                 const fragment = document.createDocumentFragment();
+                const parts = node.nodeValue.split(/(\s+)/);
 
-                for (const char of node.nodeValue) {
-                    const span = document.createElement("span");
-                    span.className = "char-split";
-                    span.textContent = char === " " ? "\u00A0" : char;
-                    span.style.display = "inline-block";
-                    span.style.willChange = "transform, opacity";
-                    fragment.appendChild(span);
-                }
+                parts.forEach((part) => {
+                    if (!part) return;
+
+                    if (/^\s+$/.test(part)) {
+                        fragment.appendChild(document.createTextNode(part));
+                        return;
+                    }
+
+                    const word = document.createElement("span");
+                    word.className = "word-split";
+                    word.style.display = "inline-block";
+                    word.style.whiteSpace = "nowrap";
+
+                    for (const char of part) {
+                        const span = document.createElement("span");
+                        span.className = "char-split";
+                        span.textContent = char;
+                        span.style.display = "inline-block";
+                        span.style.willChange = "transform, opacity";
+                        word.appendChild(span);
+                    }
+
+                    fragment.appendChild(word);
+                });
 
                 node.parentNode.replaceChild(fragment, node);
             });
