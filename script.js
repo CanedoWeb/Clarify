@@ -126,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isMobileHero = window.matchMedia("(max-width: 768px)").matches;
     const gradientFadeDuration = isMobileHero ? 24 : 15;
     const gradientBackDuration = isMobileHero ? 4.5 : 3;
-    const gradientPeakHold = isMobileHero ? 3 : 1.5;
+    const phase2Lead = isMobileHero ? 1.2 : 0.7;
+    const phase2Hold = isMobileHero ? hold + 1.2 : hold + 0.6;
     const fase1Duration = cardsFase1.length * cardBlock;
 
 
@@ -181,7 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    tl.addLabel('volta', `inicio+=${Math.max(gradientFadeDuration, fase1Duration) + gradientPeakHold}`);
+    tl.addLabel('volta', `inicio+=${Math.max(gradientFadeDuration, fase1Duration)}`);
+    tl.addLabel('voltaCards', `volta-=${phase2Lead}`);
 
     tl.to(qHero('.divGradient'), {
         opacity: 1,
@@ -203,21 +205,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }, {
             opacity: 1,
             duration: fadeIn
-        }, `volta+=${start}`);
+        }, `voltaCards+=${start}`);
 
         tl.to(card, {
-            duration: hold
-        }, `volta+=${start + fadeIn}`);
+            duration: phase2Hold
+        }, `voltaCards+=${start + fadeIn}`);
 
         if (!card.classList.contains('cardFinal')) {
             tl.to(card, {
                 opacity: 0,
                 duration: fadeOut
-            }, `volta+=${start + fadeIn + hold}`);
+            }, `voltaCards+=${start + fadeIn + phase2Hold}`);
         } else {
             tl.to(card, {
                 opacity: 1,
-            }, `volta+=${start + fadeIn + hold}`);
+            }, `voltaCards+=${start + fadeIn + phase2Hold}`);
         }
     });
 
@@ -437,4 +439,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
