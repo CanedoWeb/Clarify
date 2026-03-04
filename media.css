@@ -12,8 +12,8 @@
     }
 
     .divPai {
-        height: 100dvh;
-        min-height: 100dvh;
+        height: 100svh;
+        overflow: hidden;
     }
 
     .divGradient,
