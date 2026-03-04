@@ -34,6 +34,7 @@
 html,
 body {
     background-color: #E6E3FE;
+    border: blue 2px solid;
     font-family: 'clash', sans-serif;
     font-weight: 400;
     margin: 0;
