@@ -33,12 +33,11 @@
 
 html,
 body {
-    background-color: #E6E3FE;
-    border: blue 2px solid;
+      background: red;
     font-family: 'clash', sans-serif;
     font-weight: 400;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x  : hidden;
 }
 
 * {
