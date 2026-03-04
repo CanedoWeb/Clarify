@@ -7,11 +7,14 @@ window.addEventListener('load', () => {
     setTimeout(() => window.scrollTo(0, 0), 50);
 });
 
+ScrollTrigger.config({
+    ignoreMobileResize: false
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.config({
-    ignoreMobileResize: true
-});
+
+
 
     const mainContent = document.querySelector("main.content");
     const totalQuadradosMain = 90;
