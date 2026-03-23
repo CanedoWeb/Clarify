@@ -151,12 +151,26 @@
     }
 
     .processo {
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
         overflow: visible;
+        text-align: center;
+    }
+
+    .clientes{
+        margin-top: 0;
     }
 
     .processo .sectionContent {
-        align-items: stretch;
+        align-items: center;
+    }
+
+    section.crescimento{
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .pin-section {
@@ -168,7 +182,7 @@
     .pin-section .content {
         margin-bottom: 0;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 18px;
     }
 
@@ -176,7 +190,7 @@
         width: 100%;
         padding: 0;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         gap: 12px;
         font-size: 32px;
     }
@@ -187,15 +201,18 @@
 
     .pin-section .right {
         width: 100%;
-        min-height: 480px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .pin-section .slide {
         width: 100%;
         gap: 14px;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
     }
 
     .pin-section .slide>img {
@@ -205,15 +222,18 @@
 
     .pin-section .txt-slide {
         margin-top: 0;
+        text-align: center;
     }
 
     .pin-section .slide h4 {
         font-size: 32px;
+        text-align: center;
     }
 
     .pin-section .slide p {
         margin: 14px 0;
         font-size: 18px;
+        text-align: center;
     }
 
     .divCardsCrescimento {
@@ -379,4 +399,61 @@
         width: 100%;
         padding: 0 8px;
     }
+
+
+
+    .pin-section .content {
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .pin-section .list {
+        width: 100%;
+        padding: 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        font-size: 32px;
+    }
+
+    .pin-section .right {
+        width: 100%;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pin-section .slide {
+        width: 100%;
+        gap: 14px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pin-section .slide>img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .pin-section .txt-slide {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .pin-section .slide h4 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .pin-section .slide p {
+        margin: 14px 0;
+        font-size: 18px;
+        text-align: center;
+    }
 }
+
+/* Centralizar todas as divs e tags dentro de .section */
